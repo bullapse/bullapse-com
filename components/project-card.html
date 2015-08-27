@@ -1,0 +1,74 @@
+<link rel="import" href="../bower_components/paper-shadow/paper-shadow.html">
+<polymer-element name="project-card">
+
+    <template>
+
+        <style>
+            :host {
+                display: block;
+                position: relative;
+                font-size: 1.2rem;
+                font-weight: 300;
+                margin-left: auto;
+                margin-right: auto;
+                width: 85%;
+                padding-top: 2%;
+                padding-bottom: 2%;
+            }
+            polyfill-next-selector { content: '.card-header h1'; }
+            .card-header ::content h1 {
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 5%;
+                padding-bottom: 5%;
+                width: 70%;
+                font-size: 225%;
+            }
+            polyfill-next-selector { content: '.card-header h2'; }
+            .card-header ::content h2 {
+                width: 70px;
+                border-radius: 50%;
+                margin: 10px;
+            }
+            polyfill-next-selector { content: '.card-header p'; }
+            .card-header ::content p {
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 5%;
+                padding-right: 5%;
+                padding-bottom: 5%;
+                width: 70%;
+                font-size: 100%;
+            }
+            core-icon-button {
+                position: absolute;
+                top: 3px;
+                right: 3px;
+                color: #636363;
+            }
+            :host([favorite]) core-icon-button {
+                color: #da4336;
+            }
+            .card-header {
+                background-color: #ffffff;
+            }
+        </style>
+
+        <!--Outlying border-->
+        <paper-shadow class="card-header" z="4">
+
+            <content select="h1"></content>
+            <content select="h2"></content>
+            <content select="p"></content>
+            <content></content>
+
+        </paper-shadow>
+
+    </template>
+    <script>
+        Polymer('project-card');
+    </script>
+
+</polymer-element>

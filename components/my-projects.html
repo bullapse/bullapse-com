@@ -1,0 +1,106 @@
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<polymer-element name="my-projects">
+
+    <template>
+
+        <link rel="stylesheet" href="../css/styles.css">
+
+        <paper-shadow class="white">
+            <div class="container">
+                <paper-button class="projectBtn" horizontal layout center raised on-click="{{bevy}}">bevy (work in progress)</paper-button>
+
+                <paper-button class="projectBtn" horizontal layout center raised on-click="{{Android}}">Android</paper-button>
+
+                <paper-dialog id="android" heading="Android Applications" transition="core-transition-center">
+
+                    <paper-button class="projectBtn" on-click="{{lottoOrganizer}}" raised>Lotto Organizer</paper-button>
+
+                </paper-dialog>
+
+                <paper-button class="projectBtn" horizontal layout center raised on-click="{{Wearables}}">Wearables</paper-button>
+
+                <paper-dialog id="wearables" heading="Wearables" transition="core-transition-center">
+
+                    <paper-button class="projectBtn" on-click="{{Elauwit}}" raised>Elauwit Channel Locater for Google Glass</paper-button>
+
+                </paper-dialog>
+
+                <paper-button class="projectBtn" horizontal layout center raised on-click="{{School}}">School</paper-button>
+
+                <paper-dialog id="school" heading="School Projects: Email Me to View" transition="core-transition-center" vertical layout center>
+
+                    <paper-button class="projectBtn" on-click="{{MathMatrix}}" raised>Math Matrix</paper-button>
+                    <paper-button class="projectBtn" on-click="{{NameSurfer}}" raised>Name Surfer</paper-button>
+                    <paper-button class="projectBtn" on-click="{{MasterMind}}" raised>Master Mind</paper-button>
+                    <paper-button class="projectBtn" on-click="{{LinkedList}}" raised>Linked List</paper-button>
+                    <paper-button class="projectBtn" on-click="{{Recursion}}" raised>Recursion</paper-button>
+                    <paper-button class="projectBtn" on-click="{{Sets}}" raised>Sets</paper-button>
+
+
+                </paper-dialog>
+
+            </div>
+        </paper-shadow>
+
+        <content></content>
+
+
+
+    </template>
+    <script>
+
+
+        Polymer('my-projects', {
+            bevy: function () {
+                OpenInNewTab("http://bevy.bullapse.com");
+
+            },
+            Android: function () {
+                this.$.android.toggle();
+                console.log('Android was clicked');
+
+            },
+            Wearables: function (e) {
+                this.$.wearables.toggle();
+                console.log('School was clicked');
+            },
+            School: function (e) {
+                this.$.school.toggle();
+                console.log('School was clicked');
+            },
+            lottoOrganizer: function() {
+                OpenInNewTab("https://bitbucket.org/bullapse/lotto-organizer");
+            },
+            Elauwit: function() {
+                OpenInNewTab("https://bitbucket.org/bullapse/elauwit-channel-locater");
+            },
+            MathMatrix: function() {
+                OpenInNewTab("https://bitbucket.org/bullapse/math-matrix");
+            },
+            NameSurfer: function() {
+                OpenInNewTab("https://bitbucket.org/bullapse/name-surfer");
+            },
+            MasterMind: function() {
+                OpenInNewTab("https://bitbucket.org/bullapse/master-mind");
+            },
+            LinkedList: function() {
+                OpenInNewTab("https://bitbucket.org/bullapse/linked-list");
+            },
+            Recursion: function() {
+                OpenInNewTab("https://bitbucket.org/bullapse/recursion");
+            },
+            Sets: function() {
+                OpenInNewTab("https://bitbucket.org/bullapse/sets");
+            }
+
+
+
+        });
+
+        function OpenInNewTab(url) {
+            var win = window.open(url, '_blank');
+            win.focus();
+        }
+    </script>
+
+</polymer-element>

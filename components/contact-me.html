@@ -1,0 +1,47 @@
+<polymer-element name="contact-me">
+
+    <template>
+
+        <link rel="stylesheet" href="../css/styles.css">
+
+        <paper-shadow class="aboutMe">
+            <div class="container">
+                <paper-button class="projectBtn" horizontal layout center raised on-click="{{Twitter}}">Twitter</paper-button>
+                <paper-button class="projectBtn" horizontal layout center raised on-click="{{Linked}}">Linked In</paper-button>
+                <paper-button class="projectBtn" horizontal layout center raised on-click="{{YouTube}}">YouTube</paper-button>
+                <paper-button class="projectBtn" horizontal layout center raised on-click="{{Email}}">Email - sbull@cs.utexas.edu</paper-button>
+            </div>
+        </paper-shadow>
+        <content></content>
+
+    </template>
+    <script>
+
+        Polymer('contact-me', {
+            Twitter: function () {
+                OpenInNewTab("https://twitter.com/SpencerGBull")
+                //window.location = "https://twitter.com/SpencerGBull";
+            },
+            Linked: function () {
+                OpenInNewTab("https://www.linkedin.com/pub/spencer-bull/79/30a/236/");
+                //window.location = "https://www.linkedin.com/pub/spencer-bull/79/30a/236/";
+            },
+            YouTube: function () {
+                OpenInNewTab("https://www.youtube.com/user/baylor2554");
+                //window.location = "https://www.youtube.com/user/baylor2554";
+            },
+            Email: function () {
+                OpenInNewTab("mailto:sbull@cs.utexas.edu");
+                //window.location = "mailto:sbull@cs.utexas.edu";
+            }
+
+        })
+
+        //http://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-using-javascript
+        function OpenInNewTab(url) {
+            var win = window.open(url, '_blank');
+            win.focus();
+        }
+    </script>
+
+</polymer-element>

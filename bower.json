@@ -1,0 +1,25 @@
+{
+  "name": "bullapse",
+  "version": "0.0.0",
+  "description": "Personal website",
+  "main": "index.html",
+  "keywords": [
+    "bullapse"
+  ],
+  "authors": [
+    "Spencer Bull"
+  ],
+  "license": "MIT",
+  "homepage": "bullapse.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.2",
+    "google-signin": "GoogleWebComponents/google-signin#~0.2.0"
+  }
+}

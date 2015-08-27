@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>Bullapse</title>
+
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+
+    <!--CSS-->
+    <link rel="stylesheet"
+          href="css/styles.css">
+
+    <!--Import Statement-->
+    <link rel="import"
+          href="bower_components/font-roboto/roboto.html">
+    <link rel="import"
+          href="bower_components/paper-tabs/paper-tab.html">
+    <link rel="import"
+          href="bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import"
+          href="bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import"
+          href="bower_components/core-media-query/core-media-query.html">
+    <link rel="import"
+          href="bower_components/paper-shadow/paper-shadow.html">
+    <link rel="import"
+          href="bower_components/core-pages/core-pages.html">
+    <link rel="import"
+          href="bower_components/paper-button/paper-button.html">
+    <!--<link rel="import"-->
+          <!--href="components/my-projects.html">-->
+    <link rel="import"
+          href="components/project-card.html">
+    <link rel="import"
+          href="components/contact-me.html">
+    <link rel="import"
+          href="bower_components/paper-dialog/paper-dialog.html">
+    <link rel="import"
+          href="bower_components/core-transition/core-transition.html">
+
+</head>
+<body>
+<template is="auto-binding">
+    <!--Toolbar-->
+    <core-toolbar class="medium-tall"  >
+        <a id="title">Bullapse</a>
+
+        <paper-tabs selected="1" self-end class="bottom" id="tabs">
+
+            <paper-tab>Projects</paper-tab>
+            <paper-tab>About Me</paper-tab>
+            <paper-tab>Contact</paper-tab>
+
+        </paper-tabs>
+
+    </core-toolbar>
+
+
+    <core-pages selected="{{$.tabs.selected}}" selectedIndex="0">
+        <!--Page Content: Projects-->
+        <div class="container">
+             <!--<my-projects></my-projects>-->
+            <!--Using a different style. I was getting tired of the old style with the button-->
+            <project-card>
+                <p style="padding-top: 5%; text-align: center;">Click on the title of each card for more information</p>
+            </project-card>
+
+            <!--bevy-->
+            <project-card>
+                <h1 onclick="bevy()">bevy</h1>
+                <p>bevy is a personal project that I am currently working on. It has given me great insight into what goes into creating a full web application. I decided to use the new <a href="http://polymer-project.org" target="_blank">Polymer framework</a>, by Google, to create the application. Bevy uses the DynamoDB database service along with a Node.js webservice. Click the link below to check out the application and find out what bevy is really about.</p>
+                <paper-button on-click="{{bevy}}"></paper-button>
+            </project-card>
+
+            <!--Android-->
+            <!--Do something here to show that the applications have changed to Android-->
+            <!--Lotto Organizer-->
+            <project-card>
+                <h1 onclick="lottoOrganizer()">Lotto Organizer</h1>
+                <p>This is the beginning of a larger app that can allow convenient store users to track the inventory of their lottery ticket. As of now, it creates a SQL-Light database directly on the Android Device. This will eventually be cloud based when I get the time to create a web-service and database. Note: This project uses the zxing project library that can be found here: zxing is an integrated bar-code scanning app that can read almost every style of bar-code. zxing is under the Apache License.</p>
+            </project-card>
+
+            <!--Wearables-->
+            <!--Do something here to show that the applications have changed to Wearables-->
+            <!--Elauwit Channel Locater-->
+            <project-card>
+                <h1 onclick="Elauwit()">Elauwit Channel Locater for Google Glass</h1>
+                <p>This is a simple Google Glass application that uses these <a href=" http://www.edrpo.com/edrAssets/propsP/358/documents/cableChannelLineup.pdf">channel listings</a>. This is for my personal use only, and this has no affiliation with the Elauwit cable provider.</p>
+            </project-card>
+
+            <!--School Projects-->
+            <!--Do something here to show that the applciations have changed to School Projects-->
+
+            <!--Math Matrix-->
+            <project-card>
+                <h1 onclick="MathMatrix()">Math Matrix</h1>
+                <p>Contact me at sbull@utexas.edu to gain access<br><br>
+                A class that represents a mathematical matrix. Full implementation of class can be found at my bitbucket page.</p>
+            </project-card>
+
+            <!--Name Surfer-->
+            <project-card>
+                <h1 onclick="NameSurfer()">Name Surfer</h1>
+                <p>Contact me at sbull@utexas.edu to gain access<br><br>
+                    A program that allows a user to query a data base of the 1000 most popular baby names in the United States per decade for a given number of decades under the constraints of the General Assignment Requirements as described at the Bitbucket page.</p>
+            </project-card>
+
+            <!--Master Mind-->
+            <project-card>
+                <h1 onclick="MasterMind()">Master Mind</h1>
+                <p>Contact me at sbull@utexas.edu to gain access<br><br>
+                    This is a text version of the classic board game Mastermind.<br> The computer will think of a secret code.<br> The code consists of 4 colored pegs.<br> The pegs may be one of six colors: blue, green , orange, purple, red, or yellow.<br> A color may appear more than once in the code.</p>
+            </project-card>
+
+            <!--Linked List-->
+            <project-card>
+                <h1 onclick="LinkedList()">Linked List</h1>
+                <p>Contact me at sbull@utexas.edu to gain access<br><br>
+                    Implements the underlying storage container as a doubly linked structure using the given DoubleListNode class. The DoubleListNodes and LinkedList are generic based on Java's generic syntax.</p>
+            </project-card>
+
+            <!--Recursion-->
+            <project-card>
+                <h1 onclick="Recursion()">Recursion</h1>
+                <p>Contact me at sbull@utexas.edu to gain access<br><br>
+                    Implements 9 recursive methods. More information can be found at the Bitbuckt page.</p>
+            </project-card>
+
+            <!--Sets-->
+            <project-card>
+                <h1 onclick="Sets()">Sets</h1>
+                <p>Contact me at sbull@utexas.edu to gain access<br><br>
+                    Java class that is a skeletal implementation of a data structure</p>
+            </project-card>
+        </div>
+
+        <div class="container">
+             <!--Page Content: About Me-->
+             <paper-shadow class="aboutMe">
+                 <div class="container">
+                     <p>My name is Spencer Bull, and I am a Junior Computer Science student/developer that is passionate about the evolution of new technologies. I have attended the University of Texas at Austin for two years pursuing a Bachelor of Science in Computer Science along with a Business Foundations Certificate. I was a two year intern at Ctuit Software helping develop financial reports with Active Reports Software customized with other in-house software. I accomplished many other tasks while interning at Ctuit Software such as: building a server rack, participating in quality assurance, finding other unique ways to deliver financial information , working with Google Glass, and working with Android wear.</p>
+                 </div>
+             </paper-shadow>
+        </div>
+
+        <div class="container">
+             <!--Page Content: Contact-->
+            <contact-me></contact-me>
+
+        </div>
+    </core-pages>
+
+</template>
+
+
+    <!-- detect when window is narrow -->
+    <core-media-query id="mediaQuery" query="max-width: 640px"></core-media-query>
+
+    <script>
+        /**
+         * does the changes for the tabs
+         */
+        document.querySelector('#mediaQuery').addEventListener('core-media-change',
+                function(e) {
+                    document.body.classList.toggle('core-narrow', e.detail.matches);
+        });
+
+        /**
+         * For projects Tab
+         * Links
+         */
+        function bevy() {
+            OpenInNewTab("http://bevy.bullapse.com");
+
+        }
+        function lottoOrganizer() {
+            OpenInNewTab("https://bitbucket.org/bullapse/lotto-organizer");
+        }
+        function Elauwit() {
+            OpenInNewTab("https://bitbucket.org/bullapse/elauwit-channel-locater");
+        }
+        function MathMatrix() {
+            OpenInNewTab("https://bitbucket.org/bullapse/math-matrix");
+        }
+        function NameSurfer() {
+            OpenInNewTab("https://bitbucket.org/bullapse/name-surfer");
+        }
+        function MasterMind() {
+            OpenInNewTab("https://bitbucket.org/bullapse/master-mind");
+        }
+        function LinkedList() {
+            OpenInNewTab("https://bitbucket.org/bullapse/linked-list");
+        }
+        function Recursion() {
+            OpenInNewTab("https://bitbucket.org/bullapse/recursion");
+        }
+        function Sets() {
+            OpenInNsewTab("https://bitbucket.org/bullapse/sets");
+        }
+
+        /**
+         * Open the url given in a new tab
+         * @param url
+         * @constructor
+         */
+        function OpenInNewTab(url) {
+            var win = window.open(url, '_blank');
+            win.focus();
+        }
+
+    </script>
+</body>
+</html>
