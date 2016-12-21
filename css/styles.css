@@ -14,14 +14,30 @@
     border-radius: 50%;
 }
 
+#aboutme {
+    text-align : center;
+    width : 100%;
+    position: absolute;
+    margin-top : 400px;
+}
 
+.aboutmeinside {
+    text-align: center;
+    position: absolute;
+    text-align: center;
+    width : 50%;
+    margin : auto;
+}
 #title {
     display: inline-flex;
     width : 100%;
-    margin-top : 6%;
+    margin-top : 70px;
     background: #2079c7;
     font-size: 24pt;
-
+    position : absolute;
+    left:0;
+    right:0;
+    font-family: Impact;
 }
 #spencer {
     margin-left : auto;
@@ -37,8 +53,12 @@
 
 
 }
-.contact {
+#contact {
     display: inline-block;
+    position: absolute;
+    width : 100%;
+    text-align: center
+
 }
 .center {
     margin-left: auto;
