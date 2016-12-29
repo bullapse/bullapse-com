@@ -3,6 +3,7 @@ $(document).ready(function() {
     var subnets = [];
     var sub10 = create10Subnet();
     var foundIPs = [];
+    var foundIPsPort = []
     subnets.push(sub10);
     // run through all subnets
     var test = 0;
@@ -14,7 +15,10 @@ $(document).ready(function() {
                 console.log("Found IPs: " + foundIPs);
                 console.log("Searching for open ports")
                 for (var i = 0; i <= 65535; i++) {
-
+                    hit(tip, i, function(ip) {
+                        foundIPsPort.push(ip);
+                        console.log("Found open port:" + i);
+                    });
                 }
             });
         });
